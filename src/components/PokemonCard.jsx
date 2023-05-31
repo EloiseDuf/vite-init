@@ -10,18 +10,33 @@ const pokemonList = [
 ];
 
 function PokemonCard(){
-    const pokemon=1;
-    const picture=pokemonList[pokemon].hasOwnProperty('imgSrc');
-
+    const pokemon=pokemonList[0];
+    const picture=pokemon.hasOwnProperty('imgSrc');
+   
     return(
 
 <figure>
-  
-    <img style={{display: picture ? "inline" : "none"}} src={pokemonList[pokemon].imgSrc}
-         alt={pokemonList[pokemon].name}/>
+    <img style={{display: picture ? "inline" : "none"}} src={pokemon.imgSrc}
+         alt={pokemon.name}/>
     <p style={{display: picture ? "none" : "inline"}}>???</p>
-    <figcaption>{pokemonList[pokemon].name}</figcaption>
+    <figcaption>{pokemon.name}</figcaption>
 </figure>)
 }
+
+// autre solution proposé par Abdou:
+// function PokemonCard() {
+//   const pokemon = pokemonList[1];
+
+//   return (
+//     <figure>
+//       {pokemon.imgSrc != null ? (
+//         <img src={pokemon.imgSrc} alt={pokemon.name} />
+//       ) : (
+//         <p>???</p>
+//       )}
+//       <figcaption>{pokemon.name}</figcaption>
+//     </figure>
+//   );
+// }
 
 export default PokemonCard;
