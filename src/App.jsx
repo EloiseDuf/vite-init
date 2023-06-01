@@ -44,8 +44,8 @@ function App() {
   return (
     <>
       <PokemonCard name={pokemonList[pokemonIndex].name} imgSrc={pokemonList[pokemonIndex].imgSrc}  />
-    <button onClick={previousClick}>Previous</button>
-    <button onClick={nextClick}>Next</button>
+    {pokemonIndex>0 ? <button onClick={previousClick}>Previous</button> : <p></p> }
+    {pokemonIndex<pokemonList.length-1? <button onClick={nextClick}>Next</button> : <p></p>}
     </>
   )
 }
