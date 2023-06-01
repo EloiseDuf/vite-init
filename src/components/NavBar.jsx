@@ -1,13 +1,7 @@
 import App from "../App"
 
-const NavBar =({pokemonIndex,setPokemonIndex,pokemonList}) => {
-const previousClick = () => {
-    setPokemonIndex(pokemonIndex-1)
-  }
+const NavBar =({previousClick,nextClick,pokemonIndex,setPokemonIndex,pokemonList}) => {
 
-  const nextClick= () => {
-    setPokemonIndex(pokemonIndex+1)
-  }
 return (
     <>
 {pokemonIndex>0 ? <button onClick={previousClick}>Previous</button> : <p></p> }
