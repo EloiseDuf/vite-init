@@ -1,11 +1,14 @@
 import App from "../App"
 
-const NavBar =({pokemonIndex,previousClick,nextClick,pokemonList}) => {
-    
+const NavBar =({state,pokemonList}) => {
+
+    const[pokemonIndex,setPokemonIndex]=state;
+
 return (
     <>
-{pokemonIndex>0 ? <button onClick={previousClick}>Previous</button> : <p></p> }
-{pokemonIndex<pokemonList.length-1? <button onClick={nextClick}>Next</button> : <p></p>}
+{pokemonList.map((pokemon,index)=> (
+    <button key={index} onClick={()=>setPokemonIndex(index)}>{pokemon.name}</button>
+))}
     </>
 )
 

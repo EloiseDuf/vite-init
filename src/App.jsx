@@ -36,14 +36,6 @@ function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0)
 
-  const previousClick = () => {
-    setPokemonIndex(pokemonIndex-1)
-  }
-
-  const nextClick= () => {
-    setPokemonIndex(pokemonIndex+1)
-  }
-
   useEffect(
     () => {
     alert(`hello pokemon trainer :)`)
@@ -61,7 +53,7 @@ function App() {
   return (
     <>
       <PokemonCard name={pokemonList[pokemonIndex].name} imgSrc={pokemonList[pokemonIndex].imgSrc}  />
-      <NavBar previousClick={previousClick} nextClick={nextClick} pokemonIndex={pokemonIndex} pokemonList={pokemonList}/>
+      <NavBar state={[pokemonIndex,setPokemonIndex]} pokemonIndex={pokemonIndex} pokemonList={pokemonList}/>
     </>
   )
   
